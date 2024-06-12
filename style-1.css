@@ -1,0 +1,160 @@
+/*Hex codes: Cherry Red #990011, Off-White #FCF6F5 */
+*
+{
+    margin:0px;
+    padding:0px;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+html 
+{
+    height: 100vh;
+}
+body 
+{
+    background-color: #FCF6F5;
+    color: #990011;
+    height: 100%;
+}
+#header, #footer 
+{
+    color:white;
+    background-color: #990011;
+}
+#header 
+{
+    display: flex;
+    justify-content: space-between; /* horizontal alignment (work only with flex) */
+    align-items: center;  /* vertical alignment (work only with flex) */
+    box-shadow: 5px 5px 5px gray;
+}
+#header>ul 
+{
+    display: flex;
+    list-style-type: none;
+}
+#header>img 
+{
+    height: 72px;
+}
+#header>h1 
+{
+    text-transform: uppercase;
+    font-size:2rem;
+}
+#header>ul>li>a:link
+{
+    color:white;
+    padding:10px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+} 
+#header>ul>li>a:visited
+{
+    color:yellow;
+}
+#header>ul>li>a:hover 
+{
+    background-color: white;
+    color:#990011 !important;
+    border-radius: 10px;
+}
+#header>ul>li>a:active 
+{
+    color:red;
+}
+#header>ul li:last-child 
+{
+    margin-right: 15px;
+}
+#header>ul li:first-child
+{
+    text-decoration: underline;
+}
+#footer 
+{
+    position: -webkit-sticky;
+    padding: 20px 0px;
+    bottom: 0px;
+    left:0px;
+    width:100%;
+}
+#footer>p
+{
+    text-align: center;
+}
+#content 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.product 
+{
+    box-sizing: border-box;
+    width:calc(25% - 20px);
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 10px;
+    
+}
+.product>h2 
+{
+    background-color: #990011;
+    color:white;
+    padding:10px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.product>img 
+{
+    width:250px;
+    height:250px;
+    border-radius: 250px;
+    display: block;
+    margin: auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    filter: grayscale(100%);
+}
+.product>img:hover
+{
+    box-shadow: 5px 5px 5px gray;
+    filter: grayscale(0%);
+    animation: myflip 0.500s linear;
+}
+@keyframes myflip {
+    0%
+    {
+        transform: scaleX(1);
+    }
+    50%
+    {
+        transform: scaleX(0);
+    }
+    100%
+    {
+        transform: scaleX(-1);
+    }
+}
+.product>div 
+{
+    background-color: #990011;
+    color:white;
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+}
+.product>div>button 
+{
+    background-color: white;
+    padding:7px;
+}
+.product>div>span 
+{
+    font-size: 1.5rem;
+}

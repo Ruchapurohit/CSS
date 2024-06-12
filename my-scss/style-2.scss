@@ -1,0 +1,210 @@
+/* https://colorhunt.co/palette/94a684aec3aee4e4d0ffeef4 */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+@import 'variables';
+@import 'mixins';
+* 
+{
+    @include zero-margin-padding();
+    font-family: $font;
+}
+#site 
+{
+    height:100vh;
+    display: grid;
+}
+#site>div 
+{
+    border:1px solid black;
+}
+#header
+{
+    grid-area: header;
+    background-color: $header-bg-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header>ul
+{
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+#header>img 
+{
+    display: none;
+}
+#header>ul>li>a:link 
+{
+    background-color: $footer-bg-color;
+    color:white;
+    padding:10px;
+    @include border-radius(10px);
+}
+#menu
+{
+    grid-area: menu;
+    background-color: $menu-advertisement-bg-color;
+}
+
+#menu>ul 
+{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: start;
+    border: 1px solid red;
+    gap: 20px;
+}
+#menu>ul>li>a:link 
+{
+    background-color: $footer-bg-color;
+    color:white;
+    display: block;
+    width: 90%;
+    padding:10px 0px 10px 5px;
+    @include border-radius(10px);
+    text-decoration: none;
+    font-weight: bold;
+}
+#content
+{
+    grid-area: content;
+}
+#advertisement
+{
+    grid-area: advertisement;
+    background-color: $menu-advertisement-bg-color;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+#advertisement::-webkit-scrollbar {
+    width: 0.5em;
+  }
+#advertisement::-webkit-scrollbar-thumb{
+    background-color: transparent;
+}
+#advertisement::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.ad
+{
+    background-color: antiquewhite;
+    margin: 5px 10px;
+    padding:5px 10px;
+    border:2px solid black;
+    @include border-radius(5px);
+}
+#map_address
+{
+    grid-area: map_address;
+    background-color: $footer-bg-color;
+}
+#social_media
+{
+    grid-area: social_media;
+    background-color: $footer-bg-color;
+    overflow: scroll;
+    scrollbar-width:none;
+}
+#social_media::-webkit-scrollbar {
+    width: 0.5em;
+  }
+#social_media::-webkit-scrollbar-thumb{
+    background-color: transparent;
+}
+#social_media::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.course 
+{
+    border:1px solid black;
+    width:24%;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    @include border-radius(15px);
+}
+.course>h3 
+{
+    background-color: $footer-bg-color;
+    @include border-top-radius(15px);
+    margin-bottom: 10px;
+}
+.course>a:link 
+{
+    background-color: $footer-bg-color;
+    color:white;
+}
+/* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+@media (min-width: 1025px) {
+    /* code in this block will be applied only if device width>1025 and <1280 */
+    #site 
+    {
+        grid-template-areas: 
+        "header header header"
+        "menu content advertisement"
+        "map_address map_address social_media";
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-rows: 1.5fr 6fr 120px;
+    }
+}
+
+/* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* code in this block will be applied only if device width>768 and <1024 */
+    #site 
+    {
+        grid-template-areas: 
+        "header header"
+        "menu content"
+        "advertisement advertisement"
+        "social_media map_address";
+        grid-template-columns: 1fr 4fr;
+    }
+    .course
+    {
+        width: calc(50% - 20px);
+    }
+}
+
+
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+@media (min-width: 320px) and (max-width: 767px) {
+    /* code in this block will be applied only if device width>320 and <480 */
+    #site 
+    {
+        grid-template-areas: 
+        "header"
+        "menu"
+        "content"
+        "advertisement"
+        "map_address"
+        "social_media";
+        grid-template-columns: 1fr;
+    }
+    #header>ul 
+    {
+        display: none;
+    }
+    #header>img 
+    {
+        display: inline-block;
+    }
+    #menu>ul 
+    {
+        gap: 10px;
+    }
+    .course
+    {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
